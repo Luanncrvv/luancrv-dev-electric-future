@@ -24,7 +24,7 @@ export function Hero({ lang }: { lang: Lang }) {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#0066FF]/40 bg-[#0066FF]/5 px-4 py-1.5 font-mono text-xs uppercase tracking-widest text-[#00AAFF]"
         >
           <Sparkles className="h-3 w-3" />
-          <span>v5.0 // 2025</span>
+          <span>v1.0 // 2026</span>
         </motion.div>
 
         <motion.h1
