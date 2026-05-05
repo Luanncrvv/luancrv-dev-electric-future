@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Languages } from "lucide-react";
+import { Languages, Moon, Sun } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { dict } from "@/lib/i18n";
 
-export function Nav({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
+export function Nav({
+  lang,
+  setLang,
+  theme,
+  setTheme,
+}: {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+  theme: "light" | "dark";
+  setTheme: (t: "light" | "dark") => void;
+}) {
   const t = dict[lang];
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("hero");
@@ -54,13 +64,27 @@ export function Nav({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void 
             </a>
           ))}
         </div>
-        <button
-          onClick={() => setLang(lang === "en" ? "pt" : "en")}
-          className="group flex items-center gap-2 rounded-full border border-[#0066FF]/40 bg-black/40 px-4 py-2 font-mono text-xs uppercase tracking-widest text-white transition-all hover:border-[#00AAFF] hover:bg-[#0066FF]/10 hover:shadow-[0_0_20px_rgba(0,170,255,0.4)]"
-        >
-          <Languages className="h-3.5 w-3.5 text-[#00AAFF]" />
-          {t.lang}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="group flex items-center gap-2 rounded-full border border-[#0066FF]/40 bg-black/40 px-3 py-2 font-mono text-xs uppercase tracking-widest text-white transition-all hover:border-[#00AAFF] hover:bg-[#0066FF]/10 hover:shadow-[0_0_20px_rgba(0,170,255,0.4)]"
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {theme === "dark" ? (
+              <Sun className="h-3.5 w-3.5 text-[#00AAFF]" />
+            ) : (
+              <Moon className="h-3.5 w-3.5 text-[#00AAFF]" />
+            )}
+            <span className="hidden sm:inline">{theme === "dark" ? "Light" : "Night"}</span>
+          </button>
+          <button
+            onClick={() => setLang(lang === "en" ? "pt" : "en")}
+            className="group flex items-center gap-2 rounded-full border border-[#0066FF]/40 bg-black/40 px-4 py-2 font-mono text-xs uppercase tracking-widest text-white transition-all hover:border-[#00AAFF] hover:bg-[#0066FF]/10 hover:shadow-[0_0_20px_rgba(0,170,255,0.4)]"
+          >
+            <Languages className="h-3.5 w-3.5 text-[#00AAFF]" />
+            {t.lang}
+          </button>
+        </div>
       </div>
     </motion.nav>
   );
