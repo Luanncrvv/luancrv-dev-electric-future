@@ -10,7 +10,7 @@ export function Footer({ lang }: { lang: Lang }) {
         <div className="flex items-center gap-1.5">
           <span>{t.footer.by} Luancrv Dev</span>
         </div>
-        <div>© 2025 Luancrv Dev — {t.footer.rights}</div>
+        <div>© 2026 Luancrv Dev — {t.footer.rights}</div>
       </div>
     </footer>
   );
