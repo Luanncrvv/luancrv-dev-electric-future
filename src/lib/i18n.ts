@@ -36,7 +36,7 @@ export const dict = {
       email: "Email",
       desc: "Open to opportunities, collaborations, and interesting problems. Reach out via any channel below.",
     },
-    footer: { built: "Built with React &", by: "by", rights: "All rights reserved." },
+    footer: { built: "Built with React &", by: "By", rights: "All rights reserved." },
     lang: "PT",
   },
   pt: {

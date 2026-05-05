@@ -8,8 +8,6 @@ export function Footer({ lang }: { lang: Lang }) {
     <footer className="relative border-t border-[#0066FF]/20 px-6 py-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 font-mono text-xs text-white/50 md:flex-row">
         <div className="flex items-center gap-1.5">
-          <span>{t.footer.built}</span>
-          <Heart className="h-3.5 w-3.5 animate-pulse fill-[#0066FF] text-[#0066FF]" />
           <span>{t.footer.by} Luancrv Dev</span>
         </div>
         <div>© 2025 Luancrv Dev — {t.footer.rights}</div>

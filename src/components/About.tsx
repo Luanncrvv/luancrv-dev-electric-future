@@ -4,12 +4,12 @@ import type { Lang } from "@/lib/i18n";
 import { dict } from "@/lib/i18n";
 
 const skills = [
-  { name: "React", level: 95 },
-  { name: "JavaScript", level: 92 },
+  { name: "React", level: 90 },
+  { name: "JavaScript", level: 85 },
   { name: "UI/UX Design", level: 88 },
-  { name: "Angular", level: 80 },
-  { name: "Python", level: 75 },
-  { name: "Java", level: 70 },
+  { name: "Angular", level: 70 },
+  { name: "Python", level: 80 },
+  { name: "Java", level: 60 },
 ];
 
 const stack = ["HTML", "CSS", "React", "Angular", "JavaScript", "Java", "Python", "SQL", "Figma", "N8N"];

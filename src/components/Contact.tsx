@@ -30,10 +30,6 @@ export function Contact({ lang }: { lang: Lang }) {
               <span className="pulse-dot h-2 w-2 rounded-full bg-green-400" />
               <span className="font-mono text-xs uppercase tracking-widest text-green-300">{t.contact.available}</span>
             </div>
-            <a href="#" className="group inline-flex items-center gap-2 rounded-full border border-[#0066FF]/40 bg-[#0066FF]/10 px-4 py-2 font-mono text-xs uppercase tracking-widest text-white transition-all hover:border-[#00AAFF] hover:shadow-[0_0_20px_rgba(0,170,255,0.4)]">
-              <Download className="h-3.5 w-3.5 text-[#00AAFF]" />
-              {t.contact.cv}
-            </a>
           </div>
 
           <p key={lang + "-cdesc"} className="mb-10 max-w-2xl font-mono text-base text-white/70">{t.contact.desc}</p>
