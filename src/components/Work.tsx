@@ -12,6 +12,7 @@ export function Work({ lang }: { lang: Lang }) {
       key: "osteo",
       tag: t.work.osteoTag,
       name: t.work.osteoName,
+      role: t.work.osteoRole,
       desc: t.work.osteoDesc,
       href: "https://osteopainclinic.com/",
       host: "osteopainclinic.com",
@@ -21,6 +22,7 @@ export function Work({ lang }: { lang: Lang }) {
       key: "navira",
       tag: t.work.naviraTag,
       name: t.work.naviraName,
+      role: t.work.naviraRole,
       desc: t.work.naviraDesc,
       href: "https://naviraa.lovable.app/",
       host: "naviraa.lovable.app",
@@ -60,7 +62,9 @@ export function Work({ lang }: { lang: Lang }) {
 
               <p className="mt-4 grow font-mono text-sm leading-relaxed text-white/70">{p.desc}</p>
 
-              <div className="mt-6 flex flex-wrap gap-2">
+              <p className="mt-4 font-mono text-[11px] uppercase tracking-widest text-[#00AAFF]">{p.role}</p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
                 {p.stack.map((s) => (
                   <span
                     key={s}

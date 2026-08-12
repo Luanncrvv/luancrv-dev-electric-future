@@ -43,10 +43,12 @@ export const dict = {
       visit: "Visit",
       osteoTag: "Client work",
       osteoName: "Osteopain Clinic",
+      osteoRole: "Developer — built and maintained the site",
       osteoDesc:
         "Site for an osteopathy practice in London — treatments, pricing, blog and contact, with booking handed off to Fresha so the clinic keeps a single calendar. Built and maintained on WordPress with the Divi builder.",
       naviraTag: "Brand site",
       naviraName: "Navira Atelier",
+      naviraRole: "Developer — design and build",
       naviraDesc:
         "Storefront for a handmade crochet atelier, in Portuguese — collection, the story behind the brand, and the process. Built around slow craft rather than a generic shop template: soft palette, generous spacing, one section per idea.",
     },
@@ -113,10 +115,12 @@ export const dict = {
       visit: "Visitar",
       osteoTag: "Projeto para cliente",
       osteoName: "Osteopain Clinic",
+      osteoRole: "Desenvolvedor — construí e mantive o site",
       osteoDesc:
         "Site de uma clínica de osteopatia em Londres — tratamentos, preços, blog e contato, com o agendamento delegado ao Fresha para a clínica manter uma agenda só. Construído e mantido em WordPress com o construtor Divi.",
       naviraTag: "Site de marca",
       naviraName: "Navira Atelier",
+      naviraRole: "Desenvolvedor — design e desenvolvimento",
       naviraDesc:
         "Vitrine de um ateliê de crochê feito à mão — a coleção, a história por trás da marca e o processo. Feito em cima da ideia de trabalho artesanal, não de template de loja: paleta suave, respiro entre os blocos, uma seção por ideia.",
     },
