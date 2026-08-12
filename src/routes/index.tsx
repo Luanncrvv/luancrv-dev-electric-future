@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Cursor } from "@/components/Cursor";
 import { Nav } from "@/components/Nav";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
+import { Voxa } from "@/components/Voxa";
 import { Skills } from "@/components/Skills";
 import { Learning } from "@/components/Learning";
 import { Contact } from "@/components/Contact";
@@ -16,10 +17,10 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Luancrv Dev — Frontend Developer & UI/UX Designer" },
-      { name: "description", content: "Portfolio of Luancrv Dev — Frontend Developer & UI/UX Designer with 5+ years of experience in React, Angular, Python, and AI." },
-      { property: "og:title", content: "Luancrv Dev — Frontend Developer & UI/UX Designer" },
-      { property: "og:description", content: "Building the future with React, design systems, and AI." },
+      { title: "Luancrv Dev — Front-End Developer & UI/UX Designer" },
+      { name: "description", content: "Portfolio of Luan Andrade de Carvalho — front-end developer working across React, TypeScript, Python and Luau. Currently building Voxa, an AI that writes Luau and installs it inside Roblox Studio." },
+      { property: "og:title", content: "Luancrv Dev — Front-End Developer & UI/UX Designer" },
+      { property: "og:description", content: "Building Voxa — an AI that writes Luau and installs it straight into Roblox Studio." },
     ],
   }),
 });
@@ -53,22 +54,23 @@ function Index() {
       <ScrollProgress />
       <Nav lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} />
 
-      <AnimatePresence mode="wait">
-        <motion.main
-          key={lang}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <Hero lang={lang} />
-          <About lang={lang} />
-          <Skills lang={lang} />
-          <Learning lang={lang} />
-          <Contact lang={lang} />
-          <Footer lang={lang} />
-        </motion.main>
-      </AnimatePresence>
+      {/* Keyed on lang so switching language remounts the page and re-runs the entrance
+          animations. No AnimatePresence: with mode="wait" the exiting subtree never
+          finished, so the new one never mounted and only the nav appeared to translate. */}
+      <motion.main
+        key={lang}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
+        <Hero lang={lang} />
+        <About lang={lang} />
+        <Voxa lang={lang} />
+        <Skills lang={lang} />
+        <Learning lang={lang} />
+        <Contact lang={lang} />
+        <Footer lang={lang} />
+      </motion.main>
     </div>
   );
 }

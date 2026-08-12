@@ -4,15 +4,31 @@ import type { Lang } from "@/lib/i18n";
 import { dict } from "@/lib/i18n";
 
 const skills = [
+  { name: "HTML & CSS", level: 92 },
   { name: "React", level: 90 },
-  { name: "JavaScript", level: 85 },
-  { name: "UI/UX Design", level: 88 },
-  { name: "Angular", level: 70 },
+  { name: "JavaScript / TypeScript", level: 88 },
+  { name: "UI/UX Design", level: 85 },
   { name: "Python", level: 80 },
+  { name: "SQL / Supabase", level: 75 },
   { name: "Java", level: 60 },
 ];
 
-const stack = ["HTML", "CSS", "React", "Angular", "JavaScript", "Java", "Python", "SQL", "Figma", "N8N"];
+const stack = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Python",
+  "Java",
+  "SQL",
+  "Luau",
+  "Node.js",
+  "Supabase",
+  "N8N",
+  "Figma",
+  "Git",
+];
 
 function Terminal({ lang }: { lang: Lang }) {
   const t = dict[lang];
@@ -89,7 +105,7 @@ export function About({ lang }: { lang: Lang }) {
             <div className="mt-10 grid grid-cols-3 gap-4">
               {[
                 { v: "5+", l: t.about.years },
-                { v: "10", l: t.about.stack },
+                { v: String(stack.length), l: t.about.stack },
                 { v: "AI", l: t.about.focus },
               ].map((s) => (
                 <div key={s.l} className="glass rounded-lg p-4 text-center">

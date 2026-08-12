@@ -4,14 +4,17 @@ import { dict } from "@/lib/i18n";
 
 const techs = [
   { name: "React", icon: "⚛" },
-  { name: "Angular", icon: "Ng" },
+  { name: "TypeScript", icon: "TS" },
   { name: "JavaScript", icon: "JS" },
+  { name: "HTML/CSS", icon: "</>" },
   { name: "Python", icon: "Py" },
+  { name: "Luau", icon: "Lu" },
   { name: "Java", icon: "☕" },
   { name: "SQL", icon: "DB" },
-  { name: "HTML/CSS", icon: "</>" },
-  { name: "Figma", icon: "Fg" },
+  { name: "Node.js", icon: "Nd" },
+  { name: "Supabase", icon: "Sb" },
   { name: "N8N", icon: "⚙" },
+  { name: "Figma", icon: "Fg" },
 ];
 
 export function Skills({ lang }: { lang: Lang }) {
@@ -21,7 +24,7 @@ export function Skills({ lang }: { lang: Lang }) {
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="relative mx-auto max-w-7xl">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16 text-center">
-          <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 02</div>
+          <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 03</div>
           <h2 className="mt-2 font-display text-5xl font-extrabold md:text-7xl">{t.skills.title}</h2>
           <p className="mt-3 font-mono text-sm text-white/50">{t.skills.subtitle}</p>
         </motion.div>
