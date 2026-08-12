@@ -2,7 +2,7 @@ export type Lang = "en" | "pt";
 
 export const dict = {
   en: {
-    nav: { about: "About", voxa: "Voxa", skills: "Skills", learning: "Learning", contact: "Contact" },
+    nav: { about: "About", voxa: "Voxa", work: "Work", skills: "Skills", learning: "Learning", contact: "Contact" },
     hero: {
       role: "Front-End Developer & UI/UX Designer",
       cta: "View My Work",
@@ -37,6 +37,19 @@ export const dict = {
       archLabel: "Architecture",
       visit: "Live site",
     },
+    work: {
+      title: "Selected Work",
+      subtitle: "Live sites, real users",
+      visit: "Visit",
+      osteoTag: "Client work",
+      osteoName: "Osteopain Clinic",
+      osteoDesc:
+        "Site for an osteopathy practice in London — treatments, pricing, blog and contact, with booking handed off to Fresha so the clinic keeps a single calendar. Built and maintained on WordPress with the Divi builder.",
+      naviraTag: "Brand site",
+      naviraName: "Navira Atelier",
+      naviraDesc:
+        "Storefront for a handmade crochet atelier, in Portuguese — collection, the story behind the brand, and the process. Built around slow craft rather than a generic shop template: soft palette, generous spacing, one section per idea.",
+    },
     skills: { title: "Skills", subtitle: "Tools I build with daily" },
     learning: {
       title: "Currently Learning",
@@ -59,7 +72,7 @@ export const dict = {
     lang: "PT",
   },
   pt: {
-    nav: { about: "Sobre", voxa: "Voxa", skills: "Habilidades", learning: "Aprendendo", contact: "Contato" },
+    nav: { about: "Sobre", voxa: "Voxa", work: "Projetos", skills: "Habilidades", learning: "Aprendendo", contact: "Contato" },
     hero: {
       role: "Desenvolvedor Front-End & Designer UI/UX",
       cta: "Ver Meu Trabalho",
@@ -93,6 +106,19 @@ export const dict = {
       stackLabel: "Stack",
       archLabel: "Arquitetura",
       visit: "Ver ao vivo",
+    },
+    work: {
+      title: "Projetos",
+      subtitle: "Sites no ar, com gente usando",
+      visit: "Visitar",
+      osteoTag: "Projeto para cliente",
+      osteoName: "Osteopain Clinic",
+      osteoDesc:
+        "Site de uma clínica de osteopatia em Londres — tratamentos, preços, blog e contato, com o agendamento delegado ao Fresha para a clínica manter uma agenda só. Construído e mantido em WordPress com o construtor Divi.",
+      naviraTag: "Site de marca",
+      naviraName: "Navira Atelier",
+      naviraDesc:
+        "Vitrine de um ateliê de crochê feito à mão — a coleção, a história por trás da marca e o processo. Feito em cima da ideia de trabalho artesanal, não de template de loja: paleta suave, respiro entre os blocos, uma seção por ideia.",
     },
     skills: { title: "Habilidades", subtitle: "Ferramentas que uso no dia a dia" },
     learning: {

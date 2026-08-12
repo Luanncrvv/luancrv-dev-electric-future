@@ -7,6 +7,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Voxa } from "@/components/Voxa";
+import { Work } from "@/components/Work";
 import { Skills } from "@/components/Skills";
 import { Learning } from "@/components/Learning";
 import { Contact } from "@/components/Contact";
@@ -66,6 +67,7 @@ function Index() {
         <Hero lang={lang} />
         <About lang={lang} />
         <Voxa lang={lang} />
+        <Work lang={lang} />
         <Skills lang={lang} />
         <Learning lang={lang} />
         <Contact lang={lang} />

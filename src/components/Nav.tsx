@@ -22,7 +22,7 @@ export function Nav({
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 30);
-      const sections = ["hero", "about", "voxa", "skills", "learning", "contact"];
+      const sections = ["hero", "about", "voxa", "work", "skills", "learning", "contact"];
       for (const id of sections) {
         const el = document.getElementById(id);
         if (el) {
@@ -38,6 +38,7 @@ export function Nav({
   const items = [
     { id: "about", label: t.nav.about },
     { id: "voxa", label: t.nav.voxa },
+    { id: "work", label: t.nav.work },
     { id: "skills", label: t.nav.skills },
     { id: "learning", label: t.nav.learning },
     { id: "contact", label: t.nav.contact },

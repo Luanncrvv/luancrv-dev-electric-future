@@ -24,7 +24,7 @@ export function Skills({ lang }: { lang: Lang }) {
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="relative mx-auto max-w-7xl">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16 text-center">
-          <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 03</div>
+          <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 04</div>
           <h2 className="mt-2 font-display text-5xl font-extrabold md:text-7xl">{t.skills.title}</h2>
           <p className="mt-3 font-mono text-sm text-white/50">{t.skills.subtitle}</p>
         </motion.div>

@@ -61,7 +61,7 @@ export function Learning({ lang }: { lang: Lang }) {
     <section id="learning" className="relative px-6 py-32">
       <div className="mx-auto max-w-7xl">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 04</div>
+          <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 05</div>
           <h2 className="mt-2 font-display text-5xl font-extrabold md:text-7xl">{t.learning.title}</h2>
           <p className="mt-3 font-mono text-sm text-white/50">{t.learning.subtitle}</p>
         </motion.div>

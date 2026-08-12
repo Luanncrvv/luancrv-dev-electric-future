@@ -18,7 +18,7 @@ export function Contact({ lang }: { lang: Lang }) {
 
       <div className="relative mx-auto max-w-5xl">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16 text-center">
-          <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 05</div>
+          <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 06</div>
           <h2 className="mt-2 font-display text-5xl font-extrabold md:text-7xl">{t.contact.title}</h2>
           <p className="mt-3 font-mono text-sm text-white/50">{t.contact.subtitle}</p>
         </motion.div>
