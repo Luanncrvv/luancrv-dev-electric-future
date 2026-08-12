@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Brain, Cpu } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { dict } from "@/lib/i18n";
+import { revealItem, revealScale, revealUp, revealViewport } from "@/lib/motion";
 
 function NeuralViz() {
   const layers = [4, 6, 6, 3];
@@ -60,15 +61,14 @@ export function Learning({ lang }: { lang: Lang }) {
   return (
     <section id="learning" className="relative px-6 py-32">
       <div className="mx-auto max-w-7xl">
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+        <motion.div {...revealUp} className="mb-16">
           <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 05</div>
           <h2 className="mt-2 font-display text-5xl font-extrabold md:text-7xl">{t.learning.title}</h2>
           <p className="mt-3 font-mono text-sm text-white/50">{t.learning.subtitle}</p>
         </motion.div>
 
         <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-            className="glass relative overflow-hidden rounded-2xl p-8 min-h-[340px]">
+          <motion.div {...revealScale} className="glass relative overflow-hidden rounded-2xl p-8 min-h-[340px]">
             <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-[#00AAFF]/40 bg-[#00AAFF]/10 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-[#00AAFF]">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00AAFF]" />
               {t.learning.progress}
@@ -83,10 +83,7 @@ export function Learning({ lang }: { lang: Lang }) {
             ].map((c, i) => (
               <motion.div
                 key={c.title}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
+                {...revealItem(i)}
                 className="glass group rounded-xl p-6 transition-all hover:border-[#00AAFF]/60"
               >
                 <div className="flex items-start gap-4">

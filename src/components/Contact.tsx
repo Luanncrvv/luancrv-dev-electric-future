@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { dict } from "@/lib/i18n";
+import { revealItem, revealScale, revealUp } from "@/lib/motion";
 
 export function Contact({ lang }: { lang: Lang }) {
   const t = dict[lang];
@@ -17,14 +18,13 @@ export function Contact({ lang }: { lang: Lang }) {
       <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0066FF]/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-5xl">
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16 text-center">
+        <motion.div {...revealUp} className="mb-16 text-center">
           <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 06</div>
           <h2 className="mt-2 font-display text-5xl font-extrabold md:text-7xl">{t.contact.title}</h2>
           <p className="mt-3 font-mono text-sm text-white/50">{t.contact.subtitle}</p>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-          className="glass rounded-3xl p-8 md:p-12">
+        <motion.div {...revealScale} className="glass rounded-3xl p-8 md:p-12">
           <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-green-500/40 bg-green-500/10 px-4 py-2">
               <span className="pulse-dot h-2 w-2 rounded-full bg-green-400" />
@@ -41,10 +41,7 @@ export function Contact({ lang }: { lang: Lang }) {
                 href={l.href}
                 target="_blank"
                 rel="noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                {...revealItem(i)}
                 whileHover={{ y: -4 }}
                 className="group relative overflow-hidden rounded-xl border border-[#0066FF]/30 bg-black/40 p-5 transition-all hover:border-[#00AAFF]"
               >

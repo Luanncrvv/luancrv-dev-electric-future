@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import type { Lang } from "@/lib/i18n";
 import { dict } from "@/lib/i18n";
+import { revealUp, revealViewport } from "@/lib/motion";
 
 const techs = [
   { name: "React", icon: "⚛" },
@@ -23,7 +24,7 @@ export function Skills({ lang }: { lang: Lang }) {
     <section id="skills" className="relative px-6 py-32">
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="relative mx-auto max-w-7xl">
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16 text-center">
+        <motion.div {...revealUp} className="mb-16 text-center">
           <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 04</div>
           <h2 className="mt-2 font-display text-5xl font-extrabold md:text-7xl">{t.skills.title}</h2>
           <p className="mt-3 font-mono text-sm text-white/50">{t.skills.subtitle}</p>
@@ -35,7 +36,7 @@ export function Skills({ lang }: { lang: Lang }) {
               key={tech.name}
               initial={{ opacity: 0, scale: 0.5, y: 30 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={revealViewport}
               transition={{ delay: i * 0.07, type: "spring", stiffness: 120 }}
               whileHover={{ scale: 1.08, y: -4 }}
               className="group relative aspect-square"

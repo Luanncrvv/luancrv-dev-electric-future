@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Blocks } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { dict } from "@/lib/i18n";
+import { revealItem, revealLeft, revealRight, revealUp, revealViewport } from "@/lib/motion";
 
 const stack = [
   "JavaScript",
@@ -150,24 +151,14 @@ export function Voxa({ lang }: { lang: Lang }) {
       <div className="absolute right-0 top-1/3 h-[420px] w-[420px] rounded-full bg-[#0066FF]/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
+        <motion.div {...revealUp} className="mb-16">
           <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 02 — {t.voxa.label}</div>
           <h2 className="mt-2 font-display text-5xl font-extrabold md:text-7xl">{t.voxa.title}</h2>
           <p className="mt-3 max-w-2xl font-mono text-sm text-white/50">{t.voxa.subtitle}</p>
         </motion.div>
 
         <div className="grid gap-8 lg:grid-cols-[1.05fr_1fr]">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="glass rounded-2xl p-8"
-          >
+          <motion.div {...revealLeft} className="glass rounded-2xl p-8">
             <div className="mb-6 flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-[#00AAFF]/40 bg-[#00AAFF]/10 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-[#00AAFF]">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00AAFF]" />
@@ -193,10 +184,7 @@ export function Voxa({ lang }: { lang: Lang }) {
                 {t.voxa.highlights.map((h, i) => (
                   <motion.li
                     key={h}
-                    initial={{ opacity: 0, x: -12 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
+                    {...revealItem(i)}
                     className="flex gap-3 font-mono text-sm leading-relaxed text-white/70"
                   >
                     <span className="mt-0.5 shrink-0 text-[#0066FF]">→</span>
@@ -217,12 +205,7 @@ export function Voxa({ lang }: { lang: Lang }) {
             </a>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-6"
-          >
+          <motion.div {...revealRight} className="flex flex-col gap-6">
             <div className="glass rounded-2xl p-6">
               <div className="mb-4 font-mono text-[10px] uppercase tracking-widest text-white/40">
                 {t.voxa.archLabel}
@@ -243,7 +226,7 @@ export function Voxa({ lang }: { lang: Lang }) {
                     key={s}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
+                    viewport={revealViewport}
                     transition={{ delay: i * 0.04 }}
                     className="rounded-full border border-[#0066FF]/30 bg-black/40 px-3 py-1.5 font-mono text-[11px] text-white/70 transition-colors hover:border-[#00AAFF] hover:text-white"
                   >

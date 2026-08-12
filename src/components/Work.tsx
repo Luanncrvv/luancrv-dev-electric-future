@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { dict } from "@/lib/i18n";
+import { revealItem, revealUp } from "@/lib/motion";
 
 export function Work({ lang }: { lang: Lang }) {
   const t = dict[lang];
@@ -30,12 +31,7 @@ export function Work({ lang }: { lang: Lang }) {
   return (
     <section id="work" className="relative px-6 py-32">
       <div className="mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
+        <motion.div {...revealUp} className="mb-16">
           <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 03</div>
           <h2 className="mt-2 font-display text-5xl font-extrabold md:text-7xl">{t.work.title}</h2>
           <p className="mt-3 font-mono text-sm text-white/50">{t.work.subtitle}</p>
@@ -48,10 +44,7 @@ export function Work({ lang }: { lang: Lang }) {
               href={p.href}
               target="_blank"
               rel="noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12 }}
+              {...revealItem(i)}
               whileHover={{ y: -6 }}
               className="glass group flex flex-col rounded-2xl p-8 transition-all hover:border-[#00AAFF]/60 hover:shadow-[0_0_32px_rgba(0,170,255,0.2)]"
             >

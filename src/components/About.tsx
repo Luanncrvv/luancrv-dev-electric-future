@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import type { Lang } from "@/lib/i18n";
 import { dict } from "@/lib/i18n";
+import { revealLeft, revealRight, revealUp } from "@/lib/motion";
 
 const skills = [
   { name: "HTML & CSS", level: 92 },
@@ -91,13 +92,13 @@ export function About({ lang }: { lang: Lang }) {
   return (
     <section id="about" className="relative px-6 py-32">
       <div className="mx-auto max-w-7xl">
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+        <motion.div {...revealUp} className="mb-16">
           <div className="font-mono text-xs uppercase tracking-widest text-[#00AAFF]">// 01</div>
           <h2 className="mt-2 font-display text-5xl font-extrabold md:text-7xl">{t.about.title}</h2>
         </motion.div>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+          <motion.div {...revealLeft}>
             <p key={lang + "-bio"} className="font-mono text-lg leading-relaxed text-white/80">
               {t.about.bio}
             </p>
@@ -136,7 +137,7 @@ export function About({ lang }: { lang: Lang }) {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+          <motion.div {...revealRight}>
             <Terminal lang={lang} />
           </motion.div>
         </div>
